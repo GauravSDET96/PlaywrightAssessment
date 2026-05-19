@@ -37,14 +37,12 @@ export class LoginPage {
     await this.loginButton.click();
   }
 
-  // Complete login action in one method
   async login(username: string, password: string): Promise<void> {
     await this.enterUserName(username);
     await this.enterPassword(password);
     await this.clickLogin();
   }
 
-  // (Optional) Assertion helper: verify we are still on login page by checking login button visible
   async assertLoginPageVisible(): Promise<void> {
     await expect(this.loginButton).toBeVisible();
   }
